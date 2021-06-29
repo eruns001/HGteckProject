@@ -20,7 +20,7 @@
             android:layout_height="180dp"
             android:layout_margin="10dp"
             android:adjustViewBounds="true"
-            android:src="@drawable/mainBtnLiveMonitoring"
+            android:src="@drawable/main_btn_live_monitoring"
             android:background=""
             android:scaleType="fitCenter"/>
         <ImageButton
@@ -28,7 +28,7 @@
             android:layout_height="180dp"
             android:layout_margin="10dp"
             android:adjustViewBounds="true"
-            android:src="@drawable/mainBtnLogMonitoring"
+            android:src="@drawable/main_btn_log_monitoring"
             android:background=""
             android:scaleType="fitCenter"/>
         <ImageButton
