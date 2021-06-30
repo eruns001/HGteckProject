@@ -10,6 +10,7 @@
 
     <color name="backGroundMain">#FF0A0909</color>
     <color name="mqttMainBack">#FF182D40</color>
+    <color name="statusBar">#FF101538</color>
     <color name="mqttMainItem">#FF182D40</color>
     <color name="sideBack">#FF215968</color>
 </resources>

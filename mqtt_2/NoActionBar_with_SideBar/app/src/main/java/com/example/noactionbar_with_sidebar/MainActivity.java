@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     ScreenChangeThread m_screenChangeThread;
 
     //몇초 지나면 메인 화면?
-    int to_main_sec = 5;
+    int to_main_sec = 8;
     //반응 없을때 1초에 1씩 증가
     int screenCount  = 0;
 
