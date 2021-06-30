@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -113,15 +114,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button main1st = findViewById(R.id.main_btn_to1st);
-        Button main2nd = findViewById(R.id.main_btn_to2nd);
-        Button main3rd = findViewById(R.id.main_btn_to3rd);
-        Button main4th = findViewById(R.id.main_btn_to4th);
+        ImageButton main1st = findViewById(R.id.mainBtnLiveMonitoring);
+        ImageButton main2nd = findViewById(R.id.mainBtnLogMonitoring);
+        ImageButton main3rd = findViewById(R.id.mainBtnCorrectionMonitoring);
 
-        Button side1st = findViewById(R.id.side_to1st);
-        Button side2nd = findViewById(R.id.side_to2nd);
-        Button side3rd = findViewById(R.id.side_to3rd);
-        Button side4th = findViewById(R.id.side_to4th);
+        ImageButton side1st = findViewById(R.id.side_to_live_monitoring);
+        ImageButton side2nd = findViewById(R.id.side_to_log_monitoring);
+        ImageButton side3rd = findViewById(R.id.side_to_correction_monitoring);
 
 
         FragmentManager fm = getSupportFragmentManager();
@@ -148,16 +147,10 @@ public class MainActivity extends AppCompatActivity {
             to3rdFragment();
             flMain.setVisibility(View.GONE);
         });
-        main4th.setOnClickListener(v -> {
-            mainIsVisible = false;
-            to4thFragment();
-            flMain.setVisibility(View.GONE);
-        });
 
         side1st.setOnClickListener(v -> to1stFragment());
         side2nd.setOnClickListener(v -> to2ndFragment());
         side3rd.setOnClickListener(v -> to3rdFragment());
-        side4th.setOnClickListener(v -> to4thFragment());
     }
 
     public void to1stFragment() {
