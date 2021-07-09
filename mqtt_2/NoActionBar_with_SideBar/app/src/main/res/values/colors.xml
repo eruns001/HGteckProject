@@ -13,4 +13,5 @@
     <color name="statusBar">#FF101538</color>
     <color name="mqttMainItem">#FF182D40</color>
     <color name="sideBack">#FF215968</color>
+    <color name="sideSelected">#FF177F9B</color>
 </resources>

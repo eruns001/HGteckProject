@@ -74,13 +74,13 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     Thread.sleep(1000);
                     if(screenCount >= to_main_sec && !mainIsVisible) {
-                        activity.runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                findViewById(R.id.content_main).setVisibility(View.VISIBLE);
-                                mainIsVisible = true;
-                            }
-                        });
+//                        activity.runOnUiThread(new Runnable() {
+//                            @Override
+//                            public void run() {
+//                                findViewById(R.id.content_main).setVisibility(View.VISIBLE);
+//                                mainIsVisible = true;
+//                            }
+//                        });
                         screenCount = 0;
                     }
                     else if(mainIsVisible) {
@@ -136,24 +136,48 @@ public class MainActivity extends AppCompatActivity {
         flMain.setVisibility(View.VISIBLE);
 
         main1st.setOnClickListener(v -> {
+            side1st.setBackgroundResource(R.color.sideSelected);
+            side2nd.setBackgroundResource(R.color.sideBack);
+            side3rd.setBackgroundResource(R.color.sideBack);
             mainIsVisible = false;
             to1stFragment();
             flMain.setVisibility(View.GONE);
         });
         main2nd.setOnClickListener(v -> {
+            side1st.setBackgroundResource(R.color.sideBack);
+            side2nd.setBackgroundResource(R.color.sideSelected);
+            side3rd.setBackgroundResource(R.color.sideBack);
             mainIsVisible = false;
             to2ndFragment();
             flMain.setVisibility(View.GONE);
         });
         main3rd.setOnClickListener(v -> {
+            side1st.setBackgroundResource(R.color.sideBack);
+            side2nd.setBackgroundResource(R.color.sideBack);
+            side3rd.setBackgroundResource(R.color.sideSelected);
             mainIsVisible = false;
             to3rdFragment();
             flMain.setVisibility(View.GONE);
         });
 
-        side1st.setOnClickListener(v -> to1stFragment());
-        side2nd.setOnClickListener(v -> to2ndFragment());
-        side3rd.setOnClickListener(v -> to3rdFragment());
+        side1st.setOnClickListener(v -> {
+            to1stFragment();
+            side1st.setBackgroundResource(R.color.sideSelected);
+            side2nd.setBackgroundResource(R.color.sideBack);
+            side3rd.setBackgroundResource(R.color.sideBack);
+        });
+        side2nd.setOnClickListener(v -> {
+            to2ndFragment();
+            side1st.setBackgroundResource(R.color.sideBack);
+            side2nd.setBackgroundResource(R.color.sideSelected);
+            side3rd.setBackgroundResource(R.color.sideBack);
+        });
+        side3rd.setOnClickListener(v -> {
+            to3rdFragment();
+            side1st.setBackgroundResource(R.color.sideBack);
+            side2nd.setBackgroundResource(R.color.sideBack);
+            side3rd.setBackgroundResource(R.color.sideSelected);
+        });
     }
 
     public void to1stFragment() {
