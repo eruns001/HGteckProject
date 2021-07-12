@@ -40,7 +40,7 @@ public class Fragment1st extends Fragment {
 
         for(Integer i = 10; i < 20; i++){
             //toCheckParams
-            ConstraintLayout toCheckParams = view.findViewById(R.id.test_size);
+            //ConstraintLayout toCheckParams = view.findViewById(R.id.test_size);
             ViewGroup.LayoutParams checkParams = new ViewGroup.LayoutParams(
                     (int)getResources().getDimension(R.dimen.liveItemWidth),
                     (int)getResources().getDimension(R.dimen.liveItemHeight));
@@ -54,13 +54,17 @@ public class Fragment1st extends Fragment {
             //ViewGroup.LayoutParams checkParams = toCheckParams.getLayoutParams();
 
 
-
-
             //layout item
             ConstraintLayout testCL = new ConstraintLayout(getActivity());
             testCL.setId(View.generateViewId());
             testCL.setBackground(getResources().getDrawable(R.drawable.live_view_item));
             testCL.setLayoutParams(margin);
+
+            //testLI
+            LiveItem liveItem = new LiveItem(getActivity());
+
+            liveItem.setChString("test1"+i);
+            liveItem.setValue(i+30);
 
 
             //ch number
@@ -78,12 +82,13 @@ public class Fragment1st extends Fragment {
 
 
             //add child
-            layout.addView(testCL);
-            ConstraintLayout testCL_temp = view.findViewById(testCL.getId());
-            testCL_temp.addView(chNumber, 0);
+            layout.addView(liveItem);
+            //testCL.addView(chNumber, 0);
+            //ConstraintLayout testCL_temp = view.findViewById(testCL.getId());
+
 
             //constraint
-            setChNumber.applyTo(testCL);
+            //setChNumber.applyTo(testCL);
         }
 
 
