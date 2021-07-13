@@ -29,66 +29,26 @@ public class Fragment1st extends Fragment {
         return inflater.inflate(R.layout.fragment_1st, container, false);
     }
 
+
+
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        GridLayout layout = view.findViewById(R.id.layout1st);
+        GridLayout layout = view.findViewById(R.id.layout_live);
         ViewGroup.LayoutParams layoutParams =
                 new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         ViewGroup.LayoutParams test = layout.getLayoutParams();
 
-        for(Integer i = 10; i < 20; i++){
-            //toCheckParams
-            //ConstraintLayout toCheckParams = view.findViewById(R.id.test_size);
-            ViewGroup.LayoutParams checkParams = new ViewGroup.LayoutParams(
-                    (int)getResources().getDimension(R.dimen.liveItemWidth),
-                    (int)getResources().getDimension(R.dimen.liveItemHeight));
-            ViewGroup.MarginLayoutParams margin = new ViewGroup.MarginLayoutParams(checkParams);
-            margin.setMargins(
-                    (int)getResources().getDimension(R.dimen.liveItemMargin),
-                    (int)getResources().getDimension(R.dimen.liveItemMargin),
-                    (int)getResources().getDimension(R.dimen.liveItemMargin),
-                    (int)getResources().getDimension(R.dimen.liveItemMargin)
-                    );
-            //ViewGroup.LayoutParams checkParams = toCheckParams.getLayoutParams();
-
-
-            //layout item
-            ConstraintLayout testCL = new ConstraintLayout(getActivity());
-            testCL.setId(View.generateViewId());
-            testCL.setBackground(getResources().getDrawable(R.drawable.live_view_item));
-            testCL.setLayoutParams(margin);
-
+        for(Integer i = 1; i <= 30; i++){
             //testLI
             LiveItem liveItem = new LiveItem(getActivity());
 
-            liveItem.setChString("test1"+i);
+            liveItem.setChString("ch"+i);
             liveItem.setValue(i+30);
-
-
-            //ch number
-            TextView chNumber = new TextView(getActivity());
-            chNumber.setText(i.toString());
-            chNumber.setTextColor(getResources().getColor(R.color.white));
-            chNumber.setId(View.generateViewId());
-            ConstraintSet setChNumber = new ConstraintSet();
-            setChNumber.clone(testCL);
-            setChNumber.connect(chNumber.getId(), ConstraintSet.TOP, testCL.getId(), ConstraintSet.TOP,
-                    (int)getResources().getDimension(R.dimen.margin20dp));
-            setChNumber.connect(chNumber.getId(), ConstraintSet.LEFT, testCL.getId(), ConstraintSet.LEFT,
-                    (int)getResources().getDimension(R.dimen.margin40dp));
-
-
 
             //add child
             layout.addView(liveItem);
-            //testCL.addView(chNumber, 0);
-            //ConstraintLayout testCL_temp = view.findViewById(testCL.getId());
-
-
-            //constraint
-            //setChNumber.applyTo(testCL);
         }
 
 

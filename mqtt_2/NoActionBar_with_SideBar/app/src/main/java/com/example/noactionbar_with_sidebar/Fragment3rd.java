@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridLayout;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -23,6 +24,19 @@ public class Fragment3rd extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        GridLayout layout = view.findViewById(R.id.layout_correction);
+
+        for(Integer i = 1; i <= 30; i++){
+            //testLI
+            CorrectionItem correctionItem = new CorrectionItem(getActivity());
+
+            correctionItem.setChString("ch"+i);
+            correctionItem.setValue(i+30);
+            correctionItem.testView(getActivity());
+
+            //add child
+            layout.addView(correctionItem);
+        }
         //실행내용
     }
 }

@@ -16,7 +16,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
         <GridLayout
-            android:id="@+id/layout1st"
+            android:id="@+id/layout_live"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"

@@ -2,20 +2,20 @@
 <vector
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:aapt="http://schemas.android.com/aapt"
-    android:width="426dp"
-    android:height="87dp"
-    android:viewportWidth="426"
-    android:viewportHeight="87"
+    android:width="753dp"
+    android:height="61dp"
+    android:viewportWidth="753"
+    android:viewportHeight="61"
     >
 
     <group>
 
         <clip-path
-            android:pathData="M43.5 0H382.5C406.524 0 426 19.4756 426 43.5C426 67.5244 406.524 87 382.5 87H43.5C19.4756 87 0 67.5244 0 43.5C0 19.4756 19.4756 0 43.5 0Z"
+            android:pathData="M8 0H745C749.418 0 753 3.58172 753 8V53C753 57.4183 749.418 61 745 61H8C3.58172 61 0 57.4183 0 53V8C0 3.58172 3.58172 0 8 0Z"
             />
 
         <path
-            android:pathData="M0 0V87H426V0"
+            android:pathData="M0 0V61H753V0"
             android:fillColor="#177F9B"
             />
 
