@@ -13,7 +13,11 @@ public class CorrectionItem extends ConstraintLayout
     String ch = "";
     float _value = 0;
     View view = null;
+    private Integer _type = 3;
 
+    private void changeType(Integer type){
+        _type = type;
+    }
 
     public CorrectionItem(Context context, AttributeSet attrs)
     {
@@ -52,11 +56,23 @@ public class CorrectionItem extends ConstraintLayout
         textView.setText(_value+"°C");
 
     }
-    public void testView(Context context)
+    public void changeView(Context context)
     {
         LayoutInflater inflater =(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        view = inflater.inflate(R.layout.live_item,this,true);
+        ConstraintLayout frame = (ConstraintLayout) findViewById(R.id.constraintLayout_item) ;
+        if (frame.getChildCount() > 0) {
+            // FrameLayout에서 뷰 삭제.
+            frame.removeViewAt(0);
+        }
+        if(_type == 1){
+            view = inflater.inflate(R.layout.correction_item,this,true);
+            changeType(3);
+        }
+        if(_type == 3){
+            view = inflater.inflate(R.layout.live_item,this,true);
+            changeType(1);
+        }
     }
 
 

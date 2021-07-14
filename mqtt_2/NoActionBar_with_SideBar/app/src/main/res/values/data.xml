@@ -4,7 +4,7 @@
     <dimen name="liveItemHeight">151dp</dimen>
     <dimen name="liveItemMargin">10dp</dimen>
 
-    <dimen name="logItemHeight">30dp</dimen>
+    <dimen name="logItemHeight">43dp</dimen>
     <dimen name="logItemMargin">2dp</dimen>
 
     <dimen name="margin20dp">20dp</dimen>

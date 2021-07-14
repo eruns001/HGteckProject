@@ -32,7 +32,6 @@ public class Fragment3rd extends Fragment {
 
             correctionItem.setChString("ch"+i);
             correctionItem.setValue(i+30);
-            correctionItem.testView(getActivity());
 
             //add child
             layout.addView(correctionItem);
