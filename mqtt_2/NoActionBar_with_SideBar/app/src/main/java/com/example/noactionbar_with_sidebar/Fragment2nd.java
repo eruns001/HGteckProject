@@ -1,11 +1,16 @@
 package com.example.noactionbar_with_sidebar;
 
+import android.app.Activity;
 import android.graphics.Color;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
+import android.widget.HorizontalScrollView;
+import android.widget.ScrollView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -21,6 +26,66 @@ public class Fragment2nd extends Fragment {
     ArrayList<String> strList = new ArrayList();
     ArrayList<Integer> data = new ArrayList();
     ArrayList<ArrayList<Integer>> dataLists = new ArrayList();
+    Integer _count = 0;
+    Integer _count_val = 0;
+
+    private class AutoEndTread extends Thread{
+        Activity activity;
+        HorizontalScrollView scrollView;
+        boolean running;
+
+        AutoEndTread(Activity activity, HorizontalScrollView horizontalScrollView)
+        {
+            this.activity = activity;
+            this.scrollView = horizontalScrollView;
+            running = true;
+        }
+        public void run() {
+            while (running) {
+                try {
+                    Thread.sleep(10);
+                    _count++;
+                    if(_count >= 10){
+                        scrollView.fullScroll(HorizontalScrollView.FOCUS_RIGHT);
+                        _count = 0;
+                    }
+                } catch (Exception ignore) {
+                }
+            }
+        }
+        public void cancel() {
+            running = false;
+        }
+    }
+
+
+    private class AutoAdd extends Thread{
+        Activity activity;
+        LineView lineView ;
+        boolean running;
+        AutoAdd(Activity activity, LineView lineView){
+            this.activity = activity;
+            this.lineView = lineView;
+            running = true;
+        }
+        public void run() {
+            while (running) {
+                try {
+                    Thread.sleep(10);
+                    _count_val++;
+                    if(_count_val >= 10){
+                        _count_val = 0;
+                    }
+                } catch (Exception ignore) {
+                }
+            }
+        }
+        public void cancel() {
+            running = false;
+        }
+    }
+
+
 
     @Override
     public View onCreateView(
@@ -35,6 +100,8 @@ public class Fragment2nd extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+
+
         strList.add("a");
         strList.add("b");
         strList.add("c");
@@ -43,14 +110,31 @@ public class Fragment2nd extends Fragment {
         strList.add("f");
         strList.add("g");
         strList.add("h");
-        data.add(36);
-        data.add(35);
-        data.add(35);
-        data.add(38);
-        data.add(36);
-        data.add(35);
-        data.add(35);
-        data.add(38);
+        data.add(8);
+        data.add(4);
+        data.add(8);
+        data.add(4);
+        data.add(4);
+        data.add(8);
+        data.add(4);
+        data.add(4);
+        strList.add("a");
+        strList.add("b");
+        strList.add("c");
+        strList.add("d");
+        strList.add("e");
+        strList.add("f");
+        strList.add("g");
+        strList.add("h");
+        data.add(8);
+        data.add(4);
+        data.add(8);
+        data.add(4);
+        data.add(4);
+        data.add(8);
+        data.add(4);
+        data.add(4);
+
         dataLists.add(data);
 
         GridLayout layout = view.findViewById(R.id.layout_log);
@@ -73,6 +157,31 @@ public class Fragment2nd extends Fragment {
             //add child
             layout.addView(logItem);
         }
+        HorizontalScrollView horizontalScrollView = view.findViewById(R.id.graph_scroll);
+        horizontalScrollView.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                Rect rect = new Rect(horizontalScrollView.getLeft(), horizontalScrollView.getRight(),
+                        horizontalScrollView.getTop(), horizontalScrollView.getBottom());
+                switch(event.getAction()) {
+                    case MotionEvent.ACTION_DOWN :
+                        _count = 0;
+                        break;
+                    case MotionEvent.ACTION_MOVE  :
+                        if(!rect.contains(v.getLeft() + (int) event.getX(), v.getTop() + (int) event.getY())){
+                            _count = 0;
+                        }
+                        break;
+                    case MotionEvent.ACTION_UP   :
+                        break;
+                }
+                return false;
+            }
+        });
+
+        AutoEndTread autoEndTread = new AutoEndTread(getActivity(), horizontalScrollView);
+        autoEndTread.start();
         //실행내용
     }
 }
+

@@ -7,7 +7,7 @@
 
 
     <LinearLayout
-        android:layout_width="360dp"
+        android:layout_width="240dp"
         android:layout_height="@dimen/logItemHeight"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -42,30 +42,6 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_weight="12"/>
-        <ImageButton
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:src="@drawable/icon_log"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:background="@color/sideSelected"
-            android:layout_gravity="center"/>
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1"/>
-        <ImageButton
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:src="@drawable/icon_correction"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:background="@color/sideSelected"
-            android:layout_gravity="center"/>
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1"/>
     </LinearLayout>
 
 
