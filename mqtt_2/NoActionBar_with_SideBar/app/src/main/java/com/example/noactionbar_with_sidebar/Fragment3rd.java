@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
@@ -74,6 +75,14 @@ public class Fragment3rd extends Fragment {
 
         LineData lineData = new LineData(lineDataSet);
         lineChart.setData(lineData);
+        lineChart.setDoubleTapToZoomEnabled(false);
+        //lineChart.setPinchZoom(true);
+        lineChart.setScaleXEnabled(false);
+        lineChart.setScaleYEnabled(false);
+        lineChart.setAutoScaleMinMaxEnabled(true);
+        //lineChart.
+        //lineChart.setClipValuesToContent(true);
+        lineChart.zoom(2, 1, 10, 10);
 
 
         //실행내용
