@@ -2,12 +2,9 @@ package com.example.noactionbar_with_sidebar;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.GridLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -17,6 +14,7 @@ public class LiveItem extends ConstraintLayout
     float _value = 0;
     View view = null;
     private Integer _type = 1;
+    private Integer _index;
 
     private void changeType(Integer type){
         _type = type;
@@ -43,8 +41,6 @@ public class LiveItem extends ConstraintLayout
         view = inflater.inflate(R.layout.live_item,this,true);
 
         TextView textView = view.findViewById(R.id.ch);
-
-
     }
 
     public void setChString(String str)
@@ -55,11 +51,19 @@ public class LiveItem extends ConstraintLayout
 
     }
 
+    public void setIndex(Integer index){
+        _index = index;
+    }
+
     public void setValue(float value)
     {
         _value = value;
         TextView textView = view.findViewById(R.id.value);
         textView.setText(_value+"°C");
+    }
+
+    public Integer getIndex(){
+        return _index;
     }
 
     public void changeView(Context context)
@@ -86,5 +90,11 @@ public class LiveItem extends ConstraintLayout
         }
     }
 
+    public View getLogID(){
+        return view.findViewById(R.id.button_log);
+    }
+    public View getCorrectionID(){
+        return view.findViewById(R.id.button_correction);
+    }
 
 }

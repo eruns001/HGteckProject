@@ -44,6 +44,7 @@
             android:layout_height="0dp"
             android:layout_weight="12"/>
         <ImageButton
+            android:id="@+id/button_log"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:src="@drawable/icon_log"
@@ -56,6 +57,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"/>
         <ImageButton
+            android:id="@+id/button_correction"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:src="@drawable/icon_correction"

@@ -7,7 +7,8 @@
 
 
     <LinearLayout
-        android:layout_width="240dp"
+        android:id="@+id/log_item_layout"
+        android:layout_width="170dp"
         android:layout_height="@dimen/logItemHeight"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -18,7 +19,7 @@
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_weight="1"/>
+            android:layout_weight="2"/>
         <TextView
             android:id="@+id/ch"
             android:layout_width="40dp"
@@ -41,7 +42,7 @@
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_weight="12"/>
+            android:layout_weight="14"/>
     </LinearLayout>
 
 

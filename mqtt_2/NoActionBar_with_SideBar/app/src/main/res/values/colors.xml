@@ -14,4 +14,8 @@
     <color name="mqttMainItem">#FF182D40</color>
     <color name="sideBack">#FF215968</color>
     <color name="sideSelected">#FF177F9B</color>
+    <color name="logItemColorUnSelected">#FF177F9B</color>
+    <color name="logItemColorSelected">#FFE88064</color>
+
+    <color name="colorNull">#00000000</color>
 </resources>

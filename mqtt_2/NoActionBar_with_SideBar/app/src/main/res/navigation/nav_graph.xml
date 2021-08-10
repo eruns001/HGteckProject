@@ -14,12 +14,12 @@
         android:id="@+id/fragment2nd"
         android:name="com.example.noactionbar_with_sidebar.Fragment2nd"
         android:label="Fragment2nd"
-        tools:layout="@layout/fragment_2nd"/>
+        tools:layout="@layout/fragment_Correction"/>
     <fragment
         android:id="@+id/fragment3rd"
         android:name="com.example.noactionbar_with_sidebar.Fragment3rd"
         android:label="Fragment3rd"
-        tools:layout="@layout/fragment_3rd"/>
+        tools:layout="@layout/fragment_chart"/>
     <fragment
         android:id="@+id/fragment4th"
         android:name="com.example.noactionbar_with_sidebar.Fragment4th"

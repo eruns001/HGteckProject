@@ -24,6 +24,12 @@ public class MainActivity extends AppCompatActivity {
     //반응 없을때 1초에 1씩 증가
     int screenCount  = 0;
 
+    public static Integer logItemIndex = 1;
+
+    ImageButton side1st;
+    ImageButton side2nd;
+    ImageButton side3rd;
+
     @Override
     protected void onDestroy() {
         m_screenChangeThread.cancel();
@@ -121,9 +127,9 @@ public class MainActivity extends AppCompatActivity {
         ImageButton main2nd = findViewById(R.id.mainBtnLogMonitoring);
         ImageButton main3rd = findViewById(R.id.mainBtnCorrectionMonitoring);
 
-        ImageButton side1st = findViewById(R.id.side_to_live_monitoring);
-        ImageButton side2nd = findViewById(R.id.side_to_log_monitoring);
-        ImageButton side3rd = findViewById(R.id.side_to_correction_monitoring);
+        side1st = findViewById(R.id.side_to_live_monitoring);
+        side2nd = findViewById(R.id.side_to_log_monitoring);
+        side3rd = findViewById(R.id.side_to_correction_monitoring);
 
 
         FragmentManager fm = getSupportFragmentManager();
@@ -185,6 +191,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fm.beginTransaction();
         fragmentTransaction.replace(R.id.fragment_view, fr);
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
     public void to2ndFragment() {
@@ -192,13 +199,16 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fm.beginTransaction();
         fragmentTransaction.replace(R.id.fragment_view, fr);
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
+
     public void to3rdFragment() {
         Fragment fr = new Fragment3rd();
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fm.beginTransaction();
         fragmentTransaction.replace(R.id.fragment_view, fr);
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
     public void to4thFragment() {
@@ -206,8 +216,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fm.beginTransaction();
         fragmentTransaction.replace(R.id.fragment_view, fr);
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
-
-
 }

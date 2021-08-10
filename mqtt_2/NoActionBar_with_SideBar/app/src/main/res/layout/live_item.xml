@@ -37,6 +37,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
         <ImageButton
+            android:id="@+id/button_log"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="40dp"
@@ -48,6 +49,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent" />
         <ImageButton
+            android:id="@+id/button_correction"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginEnd="40dp"
